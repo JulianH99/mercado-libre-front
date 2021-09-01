@@ -3,11 +3,18 @@ import "./SearchBox.scss";
 import React, { useState } from "react";
 import LogoMl from "../../assets/icons/Logo_ML.png";
 import SearchIcon from "../../assets/icons/ic_search.png";
+import { useHistory } from "react-router-dom";
 
 export const SearchBox = ({ querySearch = "" }) => {
+	const history = useHistory();
+
 	const [searchValue, setSearchValue] = useState(querySearch);
 
-	const performSearch = () => {};
+	const performSearch = (e) => {
+		e.preventDefault();
+
+		history.replace(`/items?search=${searchValue}`);
+	};
 
 	return (
 		<header className="ml-header">
