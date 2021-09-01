@@ -8,11 +8,13 @@ function App() {
 		<Router>
 			<SearchBox />
 
-			<Switch>
-				<Route path="/items">
-					<Items />
-				</Route>
-			</Switch>
+			<div className="ml-container">
+				<Switch>
+					<Route path="/items">
+						<Items />
+					</Route>
+				</Switch>
+			</div>
 		</Router>
 	);
 }

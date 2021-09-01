@@ -1,0 +1,14 @@
+.ml-products-section {
+	background: #fff;
+	border-radius: 4px;
+	padding-left: var(--small-gap);
+	padding-right: var(--small-gap);
+	.ml-products-list {
+		list-style: none;
+		padding: 0;
+		margin-top: 0;
+		&__item:not(:last-child) {
+			border-bottom: 1px solid #eee;
+		}
+	}
+}
