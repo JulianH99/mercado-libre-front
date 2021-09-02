@@ -1,10 +1,14 @@
 import { constants } from "../contants";
 
 export const itemsService = {
-	getItems(search) {
+	async getItems(search) {
 		const urlQuery = encodeURIComponent(search);
-		return fetch(`${constants.baseUrl}/api/items?q=${urlQuery}`).then((res) =>
-			res.json()
-		);
+		const res = await fetch(`${constants.baseUrl}/api/items?q=${urlQuery}`);
+		return await res.json();
+	},
+
+	async getItem(id) {
+		const res = await fetch(`${constants.baseUrl}/api/items/${id}`);
+		return await res.json();
 	},
 };
