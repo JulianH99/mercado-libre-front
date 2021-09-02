@@ -14,6 +14,8 @@ export const Items = () => {
 	const match = useRouteMatch();
 
 	useEffect(() => {
+		// perform search only if the query param is not empty
+		// so there is no error returned from backend
 		if (search) {
 			setLoading(true);
 			itemsService
@@ -30,6 +32,8 @@ export const Items = () => {
 			{loading && <Spinner />}
 
 			<Switch>
+				{/* use nested routing to view the breadcrumbs in the product
+				detail page as well */}
 				<Route path={`${match.path}/:id`}>
 					<ItemDetail />
 				</Route>

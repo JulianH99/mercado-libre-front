@@ -20,6 +20,9 @@ export const ItemDetail = () => {
 	return (
 		<section id="ml-product-detail">
 			{loading && <Spinner />}
+
+			{/* put the actual detail in a separate
+			componentn to avoid cluttering a single page file */}
 			{product.title && <ProductDetail product={product} />}
 		</section>
 	);

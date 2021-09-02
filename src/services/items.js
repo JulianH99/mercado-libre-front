@@ -1,5 +1,6 @@
 import { constants } from "../contants";
 
+// set apart http logic in separate functions
 export const itemsService = {
 	async getItems(search) {
 		const urlQuery = encodeURIComponent(search);

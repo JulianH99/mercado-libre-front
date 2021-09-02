@@ -6,6 +6,7 @@ import { Items } from "./pages/Items";
 function App() {
 	return (
 		<Router>
+			{/* search box outside as layout */}
 			<SearchBox />
 			<div className="ml-container">
 				<Switch>

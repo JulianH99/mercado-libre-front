@@ -13,6 +13,8 @@
 			margin-left: 8px;
 			display: flex;
 			align-items: center;
+
+			// arrow that comes after each breadcrumb item
 			&::before {
 				content: url("/assets/icons/chevron.svg");
 				display: block;
