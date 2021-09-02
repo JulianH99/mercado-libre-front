@@ -1,6 +1,6 @@
 .ml-products-section {
 	background: #fff;
-	border-radius: 4px;
+	border-radius: var(--border-radius);
 	padding-left: var(--small-gap);
 	padding-right: var(--small-gap);
 	.ml-products-list {
@@ -8,7 +8,7 @@
 		padding: 0;
 		margin-top: 0;
 		&__item:not(:last-child) {
-			border-bottom: 1px solid #eee;
+			border-bottom: 1px solid var(--light-gray);
 		}
 	}
 }

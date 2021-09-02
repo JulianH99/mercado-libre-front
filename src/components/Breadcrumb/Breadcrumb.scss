@@ -6,7 +6,7 @@
 	padding: 0;
 	margin-bottom: var(--small-gap);
 	&__item {
-		color: #999;
+		color: var(--mid-gray);
 		font-size: 14px;
 
 		&:not(:first-child) {

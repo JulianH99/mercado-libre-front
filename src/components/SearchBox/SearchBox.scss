@@ -16,7 +16,7 @@
 	}
 
 	&__form {
-		--input-border-radius: 5px;
+		--input-border-radius: var(--border-radius);
 
 		&,
 		&-search-input {
@@ -30,7 +30,7 @@
 			margin-left: 25px;
 			padding: 12px;
 			font-size: 16px;
-			color: #333;
+			color: var(--black);
 
 			&:focus {
 				outline: none;
@@ -39,7 +39,7 @@
 			}
 
 			&::placeholder {
-				color: #999;
+				color: var(--mid-gray);
 			}
 		}
 
@@ -55,7 +55,7 @@
 			cursor: pointer;
 			transition: all 0.2s;
 			height: 43px;
-			background: #eee;
+			background: var(--light-gray);
 
 			img {
 				width: 20px;
