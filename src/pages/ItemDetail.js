@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductDetail } from "../components/ProductDetail/ProductDetail";
+import { Spinner } from "../components/Spinner/Spinner";
 import { itemsService } from "../services/items";
-import { formatNumber } from "../utils/number";
 
 export const ItemDetail = () => {
 	const { id } = useParams();
 	const [product, setProduct] = useState({});
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		itemsService.getItem(id).then((res) => setProduct(res.item));
+		setLoading(true);
+		itemsService
+			.getItem(id)
+			.then((res) => setProduct(res.item))
+			.then(() => setLoading(false));
 	}, [id]);
 
 	return (
 		<section id="ml-product-detail">
-			{product.title ? (
-				<ProductDetail product={product} />
-			) : (
-				<div>
-					<p>Cargando...</p>
-				</div>
-			)}
+			{loading && <Spinner />}
+			{product.title && <ProductDetail product={product} />}
 		</section>
 	);
 };
